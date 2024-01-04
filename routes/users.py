@@ -20,3 +20,16 @@ async def insert(request:Request):
     pass    # biz
     return templates.TemplateResponse(name="users/logins.html"
                                       , context={'request':request})
+
+# 회원 리스트 /users/list -> users/lists.html
+@router.get("/list")  
+async def insert(request:Request):
+    return templates.TemplateResponse(name="users/lists.html"
+                                      , context={'request':request})
+
+# 회원 상세정보 /users/read -> users/reads.html
+# Path parameters : /users/read/id or /users/read/uniqe_name
+@router.get("/read/{object_id}")  
+async def insert(request:Request, object_id):
+    return templates.TemplateResponse(name="users/reads.html"
+                                      , context={'request':request})

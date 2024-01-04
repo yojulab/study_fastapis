@@ -12,8 +12,25 @@ templates = Jinja2Templates(directory="templates/")
 async def buttons(request:Request):
     return templates.TemplateResponse(name="gadgets/buttons.html", context={'request':request})
 
-@router.get("/Cards", response_class=HTMLResponse)
+@router.get("/Cards")
+# request = Request(query_parameters)
 async def Cards(request:Request):
+    # request.query_params
+    # QueryParams('name=gocolab&email=info%40gocolab.com')
+    # dict(request.query_params)
+    # {'name': 'gocolab', 'email': 'info@gocolab.com'}
+    return templates.TemplateResponse(name="gadgets/Cards.html", context={'request':request})
+
+@router.post("/Cards")
+async def Cards_post(request:Request):
+    # request.query_params
+    # QueryParams('')
+    # await request.form()
+    # FormData([('name', 'gocolab'), ('email', 'info@gocolab.com')])
+    # dict(await request.form())
+    # {'name': 'gocolab', 'email': 'info@gocolab.com'}
+    # form_datas = await request.form()
+    # dict(form_datas)
     return templates.TemplateResponse(name="gadgets/Cards.html", context={'request':request})
 
 @router.get("/colors", response_class=HTMLResponse)
