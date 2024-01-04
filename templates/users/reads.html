@@ -18,11 +18,11 @@
         <form action="">
             <div class="mb-3 mt-3">
                 <label for="email" class="form-label">Email:</label>
-                john@example.com
+                {{ user.email }}
             </div>
             <div class="mb-3">
                 <label for="pwd" class="form-label">Password:</label>
-                ************
+                {{ user.pswd}}, {{ user.id}}
             </div>
             <div class="form-check mb-3">
                 <label class="form-check-label">

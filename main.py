@@ -1,6 +1,13 @@
 from fastapi import FastAPI
+from database.connection import Settings
 
 app = FastAPI()
+settings = Settings()
+
+@app.on_event("startup")
+async def init_db():
+    await settings.initialize_database()
+
 from fastapi.middleware.cors import CORSMiddleware
 # No 'Access-Control-Allow-Origin'
 # CORS 설정

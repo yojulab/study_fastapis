@@ -43,7 +43,8 @@
                 <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
             </div>
             <!-- 회원 가입 -->
-            <button type="submit" class="btn btn-primary" formaction="/users/insert">가입</button>
+            <button type="submit" class="btn btn-primary" formaction="/users/insert">가입 with GET</button>
+            <button type="submit" class="btn btn-primary" formaction="/users/insert" formmethod="post">가입 with POST</button>
             <!-- 홈으로 이동 -->
             <button type="submit" class="btn btn-primary" formaction="/">취소</button>
         </form>
